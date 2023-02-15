@@ -48,7 +48,7 @@ SET default_table_access_method = heap;
 --
 
 CREATE TABLE public.appointments (
-    appointment_id integer NOT NULL,
+    appointment_id integer NOT NULL GENERATED ALWAYS AS IDENTITY,
     customer_id integer NOT NULL,
     service_id integer NOT NULL,
     "time" character varying(30)
@@ -62,7 +62,7 @@ ALTER TABLE public.appointments OWNER TO freecodecamp;
 --
 
 CREATE TABLE public.customers (
-    customer_id integer NOT NULL,
+    customer_id integer NOT NULL GENERATED ALWAYS AS IDENTITY,
     phone character varying(30),
     name character varying(30)
 );
@@ -75,7 +75,7 @@ ALTER TABLE public.customers OWNER TO freecodecamp;
 --
 
 CREATE TABLE public.services (
-    service_id integer NOT NULL,
+    service_id integer NOT NULL GENERATED ALWAYS AS IDENTITY,
     name character varying(30)
 );
 
